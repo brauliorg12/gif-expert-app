@@ -15,15 +15,15 @@ export const AddCategory = ({ onNewCategoryFn }) => {
     // Evitar enviar menos de 1 caracter
     if (inputValue.trim().length <= 1) return;
 
-    // Emitir el evento onNewCategory
-    onNewCategoryFn(inputValue.trim());
-
     // Limpiar el input
     setInputValue('');
+
+    // Emitir el evento onNewCategory
+    onNewCategoryFn(inputValue.trim());
   };
 
   return (
-    <form onSubmit={onSubmitFn}>
+    <form onSubmit={onSubmitFn} aria-label="form">
       {/* Input */}
       <input
         type="text"
